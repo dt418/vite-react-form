@@ -22,10 +22,14 @@
     "@mui/material": "^5.15.17",
     "@mui/x-charts": "^7.3.2",
     "@mui/x-date-pickers": "^7.3.2",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
     "material-react-table": "^2.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.4",
+    "react-router-dom": "^6.23.0",
+    "sort-by": "^1.2.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
@@ -45,14 +49,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.6",
     "prettier": "^3.2.5",
-    "stylelint": "^16.5.0",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard": "^36.0.0",
-    "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
-    "stylelint-order": "^6.0.4",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-stylelint": "^5.3.1"
+    "vite": "^5.2.0"
   }
 }
