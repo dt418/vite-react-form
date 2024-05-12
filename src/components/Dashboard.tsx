@@ -21,6 +21,7 @@ import { mainListItems, secondaryListItems } from './listItems'
 import Chart from './Chart'
 import Deposits from './Deposits'
 import Orders from './Orders'
+import { MuiTypography } from './MuiTypography'
 
 export type CopyrightProps = {
   sx: SxProps
@@ -193,6 +194,12 @@ export default function Dashboard() {
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <Orders />
+                </Paper>
+              </Grid>
+              {/* Typography */}
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <MuiTypography />
                 </Paper>
               </Grid>
             </Grid>
