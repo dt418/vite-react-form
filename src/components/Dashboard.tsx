@@ -21,7 +21,8 @@ import { mainListItems, secondaryListItems } from './listItems'
 import Chart from './Chart'
 import Deposits from './Deposits'
 import Orders from './Orders'
-import { MuiTypography } from './MuiTypography'
+// import { MuiTypography } from './MuiTypography'
+import MuiForm from './MuiForm'
 
 export type CopyrightProps = {
   sx: SxProps
@@ -164,6 +165,12 @@ export default function Dashboard() {
           <Toolbar />
           <Container maxWidth='lg' sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
+              {/* Form */}
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <MuiForm />
+                </Paper>
+              </Grid>
               {/* Chart */}
               <Grid item xs={12} md={8} lg={9}>
                 <Paper
@@ -197,11 +204,11 @@ export default function Dashboard() {
                 </Paper>
               </Grid>
               {/* Typography */}
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <MuiTypography />
                 </Paper>
-              </Grid>
+              </Grid> */}
             </Grid>
             <Copyright sx={{ pt: 4 }} />
           </Container>
