@@ -9,11 +9,22 @@ enum EGender {
   undefined = 'Undefined'
 }
 
+// interface IHobby {
+//   key: string
+//   label: string
+// }
+
+const hobbies: string[] = ['Play football', 'Listen to music', 'Jacking', 'Swimming']
+// const hobbyInstances: IHobby[] = hobbies.map((hobby, index) => ({
+//   key: `hobby${index}`,
+//   label: hobby
+// }))
 const formSchema = yup.object({
   firstName: yup.string().default(''),
   lastName: yup.string().default(''),
   email: yup.string().email().default(''),
-  gender: yup.mixed<EGender>().oneOf(Object.values(EGender)).required().default(undefined)
+  gender: yup.mixed<EGender>().oneOf(Object.values(EGender)).required().default(undefined),
+  hobbies: yup.array().of(yup.string()).default([])
 })
 
 export type TFormModel = yup.InferType<typeof formSchema>
@@ -24,7 +35,8 @@ function MuiForm() {
       firstName: '',
       lastName: '',
       email: '',
-      gender: undefined
+      gender: undefined,
+      hobbies: []
     },
     resolver: yupResolver(formSchema)
   })
@@ -77,6 +89,31 @@ function MuiForm() {
           )}
           control={control}
           name='gender'
+        />
+        <Controller
+          render={({ field }) => (
+            <FormControl sx={{ minWidth: 120 }}>
+              <InputLabel id={`${field.name}-select-label`}>Hobbies</InputLabel>
+              <Select
+                {...field}
+                multiple
+                onChange={field.onChange}
+                value={field.value ?? []}
+                placeholder='Select hobbies'
+                labelId={`${field.name}-select-label`}
+                label='Hobbies'
+                id={`${field.name}`}
+              >
+                {Object.values(hobbies).map((hobby) => (
+                  <MenuItem value={hobby} key={hobby}>
+                    {hobby}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          )}
+          control={control}
+          name='hobbies'
         />
       </Stack>
       <Button type='submit'>Submit</Button>
